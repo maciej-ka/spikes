@@ -32,6 +32,16 @@
   </div>
 
   <div>
+    <%= form.label :salary_from, style: "display: block" %>
+    <%= form.number_field :salary_from %>
+  </div>
+
+  <div>
+    <%= form.label :salary_to, style: "display: block" %>
+    <%= form.number_field :salary_to %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
