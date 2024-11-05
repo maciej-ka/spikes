@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_05_155228) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_05_221134) do
   create_table "offers", force: :cascade do |t|
     t.string "link"
     t.string "title"
@@ -22,9 +22,22 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_155228) do
     t.integer "salary_to"
   end
 
+  create_table "skill_in_offers", force: :cascade do |t|
+    t.integer "offer_id", null: false
+    t.integer "skill_id", null: false
+    t.boolean "required"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_skill_in_offers_on_offer_id"
+    t.index ["skill_id"], name: "index_skill_in_offers_on_skill_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "skill_in_offers", "offers"
+  add_foreign_key "skill_in_offers", "skills"
 end
