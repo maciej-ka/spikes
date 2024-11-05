@@ -17,6 +17,10 @@ export default class extends Controller {
     // window.x = this.element
     // console.log("selection change", e);
     // console.log(document.getSelection().deleteFromDocument());
-    console.log(document.getSelection().toString());
+    const sel = document.getSelection()
+    console.log(sel.toString());
+    if (sel.rangeCount > 0) {
+      console.log(sel.getRangeAt(0).getClientRects());
+    }
   }
 }
