@@ -9,10 +9,6 @@ export default class extends Controller {
     document.removeEventListener(this.select)
   }
 
-  connecte() {
-    console.log("connected");
-  }
-
   select(e) {
     // window.x = this.element
     // console.log("selection change", e);
