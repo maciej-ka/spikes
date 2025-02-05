@@ -1,0 +1,24 @@
+.page {
+  margin: 0 auto;
+  width: 360px;
+  padding: 2em;
+  border-radius: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.cta {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.submit {
+  width: 140px;
+}
