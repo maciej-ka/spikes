@@ -1,0 +1,18 @@
+import Button from "../../ui/Button/Button"
+import styles from "./Step1.module.css"
+
+const Step1 = () => (
+  <div className={styles.step}>
+    <div className={styles.header}>
+    </div>
+
+    <div>
+    </div>
+
+    <div className={styles.footer}>
+      <Button className={styles.next}>next</Button>
+    </div>
+  </div>
+)
+
+export default Step1

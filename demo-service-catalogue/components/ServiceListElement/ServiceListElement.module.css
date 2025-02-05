@@ -1,0 +1,20 @@
+.service {
+  height: 88px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  padding: 12px 18px 0;
+}
+
+.price {
+  font-weight: 500;
+}
+
+.description {
+  margin-top: 8px;
+  letter-spacing: 0.12px;
+}
