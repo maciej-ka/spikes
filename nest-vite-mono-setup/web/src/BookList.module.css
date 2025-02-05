@@ -1,0 +1,36 @@
+.page {
+  padding: 2em;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.table {
+  max-height: calc(100vh - 300px);
+  overflow: auto;
+}
+
+.pages,
+.rating {
+  width: 80px;
+}
+
+.isbn {
+  width: 120px;
+}
+
+.author {
+  width: 35%;
+}
+
+.title {
+  width: 65%;
+}
