@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* ==================== ↓↓↓ NOT RELATED TO DEMO ↓↓↓ ==================== */
+#wwrap {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+}
+html.up #wwrap {
+  flex-direction: column;
+}
+#wwrap [class*=warn--] {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0.5em 0;
+  padding: 1em 0.5em 0.5em;
+  width: calc(100% - 2em);
+  border-radius: 5px;
+  box-shadow: 0 0 5px dimgrey;
+  background: orangered;
+  color: #fff;
+  font: 1.25rem arial, sans-serif;
+  transition: transform 0.3s cubic-bezier(0.65, -0.29, 0.73, 0.05);
+  pointer-events: auto;
+}
+#wwrap [class*=warn--].hidden {
+  transform: scale(0);
+}
+#wwrap .warn__close {
+  position: absolute;
+  border: none;
+  background: none;
+  top: 0.25em;
+  right: 0.25em;
+  min-width: 3.5em;
+  transition: 0.3s;
+  color: #fff;
+  font-size: 0.75em;
+  text-indent: 0;
+  cursor: pointer;
+}
+#wwrap .warn__close:focus {
+  outline: none;
+}
+#wwrap .warn__close:focus, #wwrap .warn__close:hover {
+  color: #fff;
+}
+#wwrap .warn__close:active {
+  transform: translatey(2px) scale(0.9);
+  color: crimson;
+}
+
+/* ==================== ↑↑↑ NOT RELATED TO DEMO ↑↑↑ ==================== */
+body {
+  display: grid;
+  place-content: center;
+  margin: 0;
+  height: 100vh;
+  background: url(https://i.stack.imgur.com/PEnJm.png), radial-gradient(#1b1c1e, #0b0d0c);
+  background-blend-mode: overlay;
+}
+
+[type=range] {
+  --val: 50;
+  --pos: calc(0.5em + .01*var(--val)*(100% - 1em));
+  padding: 0;
+  width: 20em;
+  max-width: 100%;
+  height: 2em;
+  min-height: 1em;
+  border-radius: 0.625em;
+  background: none;
+  font: inherit;
+  filter: grayscale(0.5);
+  cursor: pointer;
+}
+[type=range], [type=range]::-webkit-slider-thumb, [type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+}
+[type=range]::-webkit-slider-runnable-track {
+  border: none;
+  /* because IE */
+  width: 100%;
+  height: 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 1px #4e4f51;
+  background: linear-gradient(#e4e5e7, #fffefc 70%, #bfc2c7);
+}
+.js [type=range]::-webkit-slider-runnable-track {
+  background: linear-gradient(#b3d6ec, #368aec 70%, #398ff2) 0/var(--pos) 100% no-repeat, linear-gradient(#e4e5e7, #fffefc 70%, #bfc2c7);
+}
+[type=range]::-moz-range-track {
+  border: none;
+  /* because IE */
+  width: 100%;
+  height: 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 1px #4e4f51;
+  background: linear-gradient(#e4e5e7, #fffefc 70%, #bfc2c7);
+}
+[type=range]::-ms-track {
+  border: none;
+  /* because IE */
+  width: 100%;
+  height: 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 1px #4e4f51;
+  background: linear-gradient(#e4e5e7, #fffefc 70%, #bfc2c7);
+  color: transparent;
+}
+[type=range]::-moz-range-progress {
+  height: 0.5em;
+  border-radius: 0.25em 0 0 0.25em;
+  background: linear-gradient(#b3d6ec, #368aec 70%, #398ff2);
+}
+[type=range]::-ms-fill-lower {
+  height: 0.5em;
+  border-radius: 0.25em 0 0 0.25em;
+  background: linear-gradient(#b3d6ec, #368aec 70%, #398ff2);
+}
+[type=range]::-webkit-slider-thumb {
+  margin-top: calc(.5*(0.5em - 1em));
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  box-shadow: 0 0.25em 0.25em #070709, 0 0.125em 0.5em #070709;
+  background: radial-gradient(circle at 75% 72%, #d7d7d7, #a9a9a9 0.375em, #858585 0.5em, #d7d7d7);
+  cursor: ew-resize;
+}
+[type=range]::-moz-range-thumb {
+  margin-top: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  box-shadow: 0 0.25em 0.25em #070709, 0 0.125em 0.5em #070709;
+  background: radial-gradient(circle at 75% 72%, #d7d7d7, #a9a9a9 0.375em, #858585 0.5em, #d7d7d7);
+  cursor: ew-resize;
+}
+[type=range]::-ms-thumb {
+  margin-top: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  box-shadow: 0 0.25em 0.25em #070709, 0 0.125em 0.5em #070709;
+  background: radial-gradient(circle at 75% 72%, #d7d7d7, #a9a9a9 0.375em, #858585 0.5em, #d7d7d7);
+  cursor: ew-resize;
+}
+[type=range]::-ms-tooltip {
+  display: none;
+}
+[type=range]:focus {
+  outline: solid 0 transparent;
+  filter: drop-shadow(0 0 5px #398ff2);
+}
