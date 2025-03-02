@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: hsl(0 0% 100%); // <-- Wrap in hsl
+  --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);
 }
 
 dark {
-  --background: hsl(0 0% 3.9%); // <-- Wrap in hsl
+  --background: hsl(0 0% 3.9%);
   --foreground: hsl(0 0% 98%);
 }
 
