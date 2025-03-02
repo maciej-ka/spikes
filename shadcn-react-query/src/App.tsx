@@ -1,10 +1,9 @@
-import './App.css'
+import styles from "./App.module.css";
 
 function App() {
-
   return (
-    <div className="w-screen">
-      <div className="text-6xl text-purple-300 center text-center">Hello</div>
+    <div className="p-4 pt-8">
+      <div className={styles.hello}>Hello</div>
     </div>
   )
 }
