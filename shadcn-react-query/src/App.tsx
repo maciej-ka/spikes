@@ -24,16 +24,21 @@ function App() {
   })
 
   function renderSelect() {
-    if (isLoading) {
-      return null
-    }
-    const res = data! as ListResponse
+    const options = isLoading
+      ? []
+      : (data as ListResponse).results
+
     return (
-      <SelectContent>
-        {res.results.map(({ name, url }) => (
-          <SelectItem value={url} key={url}>{name}</SelectItem>
-        ))}
-      </SelectContent>
+      <Select>
+        <SelectTrigger className="w-[180px]">
+          <SelectValue placeholder="Pokemon" />
+        </SelectTrigger>
+        <SelectContent>
+          {options.map(({ name, url }) => (
+            <SelectItem value={url} key={url}>{name}</SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
     )
   }
 
@@ -41,12 +46,7 @@ function App() {
     <div className="h-screen flex flex-col items-center justify-around">
       <div className={styles.hello}>Hello</div>
       <Button>click me</Button>
-      <Select>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Theme" />
-        </SelectTrigger>
-        {renderSelect()}
-      </Select>
+      {renderSelect()}
     </div>
   )
 }
