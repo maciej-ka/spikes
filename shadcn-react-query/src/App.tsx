@@ -23,6 +23,12 @@ function App() {
       fetch("https://pokeapi.co/api/v2/pokemon").then((res) => res.json()),
   })
 
+  const { data: devices } = useQuery({
+    queryKey: ["devices"],
+    queryFn: () => navigator.mediaDevices.enumerateDevices()
+  })
+  console.log(devices);
+
   function renderSelect() {
     const options = isLoading
       ? []
@@ -44,7 +50,7 @@ function App() {
 
   return (
     <div className="h-screen flex flex-col items-center justify-around">
-      <div className={styles.hello}>Hello</div>
+      <div className={styles.hello}>shadcn & react query Playground</div>
       <Button>click me</Button>
       {renderSelect()}
     </div>

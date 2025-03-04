@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
 .hello {
-  @apply text-6xl text-purple-300;
+  @apply text-4xl text-blue-500;
 }
