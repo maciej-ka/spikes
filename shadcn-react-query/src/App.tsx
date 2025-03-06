@@ -1,4 +1,5 @@
-import { useQuery } from "@tanstack/react-query"
+// import { useQuery } from "@tanstack/react-query"
+import { useQuery } from "./lib/my-little-react-query/QueryClientProvider.jsx"
 import styles from "./App.module.css"
 import { Button } from "./components/ui/button"
 import {
@@ -17,7 +18,7 @@ type ListResponse = {
 }
 
 function App() {
-  const { data, isLoading } = useQuery({
+  const { data, status } = useQuery({
     queryKey: ["pokemon", "list"],
     queryFn: () =>
       fetch("https://pokeapi.co/api/v2/pokemon").then((res) => res.json()),
@@ -30,7 +31,7 @@ function App() {
   console.log(devices);
 
   function renderSelect() {
-    const options = isLoading
+    const options = status === "pending"
       ? []
       : (data as ListResponse).results
 
